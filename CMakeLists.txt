@@ -76,9 +76,9 @@ INCLUDE_DIRECTORIES(externals/dynograph_util/hooks)
 add_subdirectory(externals/dynograph_util)
 
 cuda_add_executable(dynograph
-  dynograph.cpp
+  dynograph.cpp cuStinger_wrapper.cpp
 )
 
 TARGET_LINK_LIBRARIES(dynograph
-  custinger ${CUDA_LIBRARIES}
+  dynograph_util hooks custinger ${CUDA_LIBRARIES}
 )
