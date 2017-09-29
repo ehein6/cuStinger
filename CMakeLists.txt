@@ -63,9 +63,22 @@ cuda_add_library(custinger
           src/timer.c
         )
 
-cuda_add_executable(cuMain 
+cuda_add_executable(cuMain
           src/main.cpp
            )
 
 
 TARGET_LINK_LIBRARIES(cuMain custinger ${CUDA_LIBRARIES})
+
+# Build DynoGraph benchmark
+INCLUDE_DIRECTORIES(externals)
+INCLUDE_DIRECTORIES(externals/dynograph_util/hooks)
+add_subdirectory(externals/dynograph_util)
+
+cuda_add_executable(dynograph
+  dynograph.cpp
+)
+
+TARGET_LINK_LIBRARIES(dynograph
+  custinger ${CUDA_LIBRARIES}
+)
