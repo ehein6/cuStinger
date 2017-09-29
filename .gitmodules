@@ -7,3 +7,6 @@
 [submodule "externals/cub"]
 	path = externals/cub
 	url = https://github.com/NVlabs/cub.git
+[submodule "externals/dynograph_util"]
+	path = externals/dynograph_util
+	url = git@github.com:DynoGraph/dynograph_util.git
