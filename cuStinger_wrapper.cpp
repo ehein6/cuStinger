@@ -91,14 +91,15 @@ int64_t
 cuStinger_wrapper::get_num_vertices() const
 {
     // FIXME
-    return 0;
+    cuStinger &g = const_cast<cuStinger&>(graph);
+    return g.getMaxNV();
 }
 
 int64_t
 cuStinger_wrapper::get_num_edges() const
 {
-    // FIXME
-    return 0;
+    cuStinger &g = const_cast<cuStinger&>(graph);
+    return g.getNumberEdgesUsed();
 }
 
 std::vector<int64_t>
